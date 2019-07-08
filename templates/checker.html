@@ -5,10 +5,26 @@ Counter
 {% endblock %}
 
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1 class="display-4">You have visited {{session['visits']}} times!</h1>
   <a class="btn btn-primary btn-lg" href="/twice">Visit twice</a>
   <a class="btn btn-secondary btn-lg" href="/reset">Reset</a>
+</div>
+
+<div style="margin-left: 30%;margin-right: 30%;">
+  <form action="/add" method="post">
+    <div class="row">
+      <div class="col">
+        <label class="form-control-lg">Increment visits by</label>
+      </div>
+      <div class="col">
+        <input type="number" name="incr" class="form-control form-control-lg" placeholder="2" value="2">
+      </div>
+    </div>
+    <div class="row">
+      <button type="submit" class="my-5 btn btn-primary btn-block btn-lg">Yay!</button>
+    </div>
+  </form>
 </div>
 {% endblock %}
 

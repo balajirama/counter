@@ -21,5 +21,10 @@ def twice():
     session['visits']+=1
     return redirect("/")
 
+@app.route("/add", methods=['POST'])
+def increment():
+    session['visits'] += int(request.form['incr'])-1
+    return redirect("/")
+
 if __name__ == '__main__':
     app.run(debug=True)
